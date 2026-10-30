@@ -1,6 +1,6 @@
 {
   "name": "jiutian-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "九天无人机技术社区官方 CLI：设备授权登录、帖子/评论、MCP",
   "bin": {
     "jiutian": "bin/jiutian.js"
@@ -31,10 +31,10 @@
   "homepage": "https://forum.9tzy.cn/cli",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yangrenshi/jiutian-cli.git"
+    "url": "git+https://github.com/JTZY-org/jiutian-cli.git"
   },
   "bugs": {
-    "url": "https://github.com/yangrenshi/jiutian-cli/issues"
+    "url": "https://github.com/JTZY-org/jiutian-cli/issues"
   },
   "author": "九天展翼",
   "license": "MIT",

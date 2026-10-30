@@ -3,7 +3,7 @@
 九天无人机技术社区官方命令行工具。支持浏览器设备授权登录、帖子/评论查询与互动，以及 MCP（Cursor 等）。
 
 - 官网说明：https://forum.9tzy.cn/cli
-- 源码与发行版：https://github.com/yangrenshi/jiutian-cli
+- 源码与发行版：https://github.com/JTZY-org/jiutian-cli
 
 ## 安装（推荐：GitHub）
 
@@ -12,13 +12,13 @@
 ### 方式一：直接从 GitHub 安装（全局）
 
 ```bash
-npm install -g github:yangrenshi/jiutian-cli
+npm install -g github:JTZY-org/jiutian-cli
 ```
 
 ### 方式二：下载源码包后本地安装
 
-1. 打开 [Releases](https://github.com/yangrenshi/jiutian-cli/releases/latest) 下载 `Source code (zip)`，或直接下载：
-   - https://github.com/yangrenshi/jiutian-cli/archive/refs/tags/v0.1.0.zip
+1. 打开 [Releases](https://github.com/JTZY-org/jiutian-cli/releases/latest) 下载 `Source code (zip)`，或直接下载：
+   - https://github.com/JTZY-org/jiutian-cli/archive/refs/tags/v0.1.1.zip
 2. 解压后进入目录：
 
 ```bash
@@ -31,7 +31,7 @@ npm link
 ### 方式三：clone
 
 ```bash
-git clone https://github.com/yangrenshi/jiutian-cli.git
+git clone https://github.com/JTZY-org/jiutian-cli.git
 cd jiutian-cli
 npm install
 npm link
