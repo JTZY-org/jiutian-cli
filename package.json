@@ -1,0 +1,46 @@
+{
+  "name": "jiutian-cli",
+  "version": "0.1.0",
+  "description": "九天无人机技术社区官方 CLI：设备授权登录、帖子/评论、MCP",
+  "bin": {
+    "jiutian": "bin/jiutian.js"
+  },
+  "main": "src/index.js",
+  "type": "commonjs",
+  "files": [
+    "bin",
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "start": "node bin/jiutian.js",
+    "mcp": "node bin/jiutian.js mcp serve",
+    "prepublishOnly": "node -e \"require('fs').accessSync('bin/jiutian.js')\""
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "jiutian",
+    "九天",
+    "forum",
+    "cli",
+    "mcp",
+    "drone"
+  ],
+  "homepage": "https://forum.9tzy.cn/cli",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yangrenshi/jiutian-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yangrenshi/jiutian-cli/issues"
+  },
+  "author": "九天展翼",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "commander": "^12.1.0",
+    "open": "^8.4.2"
+  }
+}

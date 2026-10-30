@@ -1,0 +1,5 @@
+change.md
+run.md
+node_modules/
+*.tgz
+.DS_Store
