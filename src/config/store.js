@@ -62,6 +62,7 @@ function clearToken() {
   const cfg = readConfig();
   delete cfg.token;
   delete cfg.user;
+  delete cfg.scopes;
   writeConfig(cfg);
   return cfg;
 }

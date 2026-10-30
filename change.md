@@ -1,5 +1,10 @@
 # 修改记录（jt_cli）
 
+## 2026-10-31 记录授权 scopes
+
+- 设备流换 token 后把 `scopes` 写入 `~/.jiutian/config.json`；`auth status` / 登录成功提示展示权限。
+- `logout` 时清除 `scopes`。
+
 ## 2026-10-31 GitHub 公开仓库分发
 
 - 独立仓库：https://github.com/yangrenshi/jiutian-cli （Release `v0.1.0`）。

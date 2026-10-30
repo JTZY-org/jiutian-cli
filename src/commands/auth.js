@@ -110,19 +110,30 @@ async function deviceLogin({ json, noOpen }) {
         { auth: false, baseUrl }
       );
       if (tokenRes?.access_token) {
+        const scopes = Array.isArray(tokenRes.scopes) ? tokenRes.scopes : null;
         writeConfig({
           baseUrl,
           token: tokenRes.access_token,
           user: tokenRes.user || null,
+          scopes,
         });
         const out = {
           ok: true,
           message: '登录成功',
           user: tokenRes.user,
+          scopes,
           baseUrl,
         };
         if (json) printJson(out);
-        else printHuman([`登录成功：${tokenRes.user?.username || tokenRes.user?.account || tokenRes.user?.id || ''}`]);
+        else {
+          const scopeLine = scopes?.length ? `权限: ${scopes.join(', ')}` : null;
+          printHuman(
+            [
+              `登录成功：${tokenRes.user?.username || tokenRes.user?.account || tokenRes.user?.id || ''}`,
+              scopeLine,
+            ].filter(Boolean)
+          );
+        }
         return;
       }
     } catch (err) {
@@ -184,13 +195,15 @@ async function authStatus(opts) {
       return;
     }
     const me = await get('/api/auth/me', { baseUrl });
-    const out = { ok: true, loggedIn: true, baseUrl, user: me };
+    const scopes = readConfig().scopes || null;
+    const out = { ok: true, loggedIn: true, baseUrl, user: me, scopes };
     if (opts.json) printJson(out);
     else {
       printHuman([
         `已登录: ${me.username || me.account || me.id}`,
         `API: ${baseUrl}`,
         `角色: ${me.role || 'user'}`,
+        scopes?.length ? `权限: ${scopes.join(', ')}` : '权限: （未记录，请重新 auth login）',
       ]);
     }
   } catch (err) {

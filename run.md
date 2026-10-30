@@ -23,8 +23,9 @@ jiutian auth login
   → 打开浏览器 {CLI_AUTH_WEB_ORIGIN}/cli/authorize?user_code=XXXX-XXXX
   → 用户在网页登录（/login?redirect=...）后点「授权」
   → POST /api/cli/auth/device/approve（Bearer 网页 JWT）
-  → CLI 轮询 POST /api/cli/auth/device/token
-  → 写入 ~/.jiutian/config.json（token + user）
+  → 网页勾选 scopes → POST /api/cli/auth/device/approve
+  → CLI 轮询 POST /api/cli/auth/device/token（JWT 含 cliScopes）
+  → 写入 ~/.jiutian/config.json（token + user + scopes）
 ```
 
 ### 业务命令
